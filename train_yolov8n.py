@@ -17,6 +17,10 @@ def main():
         device=0,                # Gunakan 0 untuk GPU, atau 'cpu' jika tidak ada GPU
         project='YOLO_Training', # Nama folder utama untuk menyimpan hasil
         name='yolov8n_custom',   # Nama sub-folder untuk eksperimen ini
+        time=20.0,       # Training akan berhenti otomatis setelah 20 jam
+        patience=10,     # Tetap gunakan patience agar jika sudah bagus bisa berhenti lebih cepat
+        close_mosaic=5, # Matikan augmentasi berat 5 epoch sebelum selesai
+        exist_ok=True,                       # Menimpa folder jika sudah ada (opsional)
         
         # === CUSTOM HYPERPARAMETERS (TRAINING & OPTIMIZATION) ===
         optimizer='AdamW',       # Optimizer (bisa 'SGD', 'Adam', 'AdamW')
